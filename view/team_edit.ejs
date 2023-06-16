@@ -1,0 +1,65 @@
+<%- include('header') %>
+    <div class="dashboard-wrapper">
+        <div class="container-fluid  dashboard-content">
+
+            <!-- page heading -->
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="page-header">
+                        <h2 class="pageheader-title">Edit Team Member</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form id="validationform" method="post" action="/team/edit" enctype="multipart/form-data">
+                                <input type="hidden" name="eid"  value="<%= data.id %>">
+                                <!-- name -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Name</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <input type="text" name="name" placeholder="Enter  name"
+                                            class="form-control"  value="<%= data.name %>">
+                                    </div>
+                                </div>
+                                <!-- post -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Post</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <input type="text" name="post" placeholder="Enter  Post"
+                                            class="form-control" value="<%= data.post %>">
+                                    </div>
+                                </div>
+                                <!-- About -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">About</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <textarea type="text" name="about" placeholder="About your self...."
+                                            class="form-control"><%= data.about %></textarea>
+                                    </div>
+                                </div>
+                                <!--image   -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">image</label>
+                                    <div class="col-6 d-flex">
+                                        <input id="pass2" type="file" name="image" class="form-control-file">
+                                        <img src="<%= data.image %>" height="50" width="50" alt="">
+                                    </div>
+                                </div>
+                                <!-- buttons -->
+                                <div class="form-group row text-right">
+                                    <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+                                        <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                        <button class="btn btn-space btn-secondary">Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+<%- include('footer') %>

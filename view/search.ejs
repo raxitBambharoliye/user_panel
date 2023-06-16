@@ -1,0 +1,17 @@
+<div class="col-3 pl-0">
+    <form action="">
+        <div class=" d-flex my-3 align-items-center">
+            <% if(!search){ %>
+            <input class="form-control" name="search" type="text" placeholder="Search..">
+            <% }else {%>
+            <input class="form-control" name="search" type="text" placeholder="<%= search %>">
+            <% } %>
+            <input type="submit" value="search" id="sub" name="searching" class="mx-2" hidden>
+            <% if(!search){ %>
+            <label for="sub" class="m-0 ml-2"><i class="fa-solid fa-magnifying-glass" style="font-size: 20px;"></i></label>
+            <% }else {%>
+                <a href="?" class="m-0 ml-2"><i class="fa-solid fa-xmark"  style="font-size: 20px;"></i></a>
+            <% } %>
+        </div>
+    </form>
+</div>

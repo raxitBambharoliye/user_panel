@@ -1,0 +1,102 @@
+<%- include('header') %>
+<div class="dashboard-wrapper">
+    <div class="container-fluid  dashboard-content">
+        <!-- ============================================================== -->
+        <!-- pageheader -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="page-header">
+                    <h2 class="pageheader-title">Offers</h2>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end pageheader -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <!-- ============================================================== -->
+            <!-- basic table  -->
+            <!-- ============================================================== -->
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <%- include('search') %>
+                            <form action="/offer/mulDel" method="post">
+                            <table class="table table-striped table-bordered first text-center">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <input type="checkbox" id="multidelet">
+                                            <button type="submit" class=" bg-transparent" style="border: none ; font-size: 18px;" value="delet"><i class="fa-solid fa-trash-can"></i></button>
+                                        </th>
+                                        <th>Title</th>
+                                        <th>Content</th>
+                                        <th>image</th>
+                                        <th>operation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for(var dt of data){ %>
+                                        <tr>
+                                            <td><input type="checkbox" name="mulDel[]" class="singleDelet" value="<%= dt.id %>"></td>
+                                            <td><%=dt.title%></td>
+                                            <td><%=dt.content%></td>
+                                            <td><i class="<%= dt.icon %>"></i></td>
+                                            <td>
+                                                <a href="/offer/delet/<%= dt.id %>"><i class="fa-solid fa-trash " style="font-size: 20px; margin-right: 8px;"></i></a>
+                                                <a href="/offer/edit_page/<%= dt.id %>"><i class="fa-solid fa-pen-to-square" style="font-size: 20px; margin-right: 8px;"></i></a>
+                                               <% if(dt.isActive){ %>
+                                                <a href="?id=<%= dt.id %>&page=<% cpage %>&search=<%= search %>&status=deActive"><i class="fa-regular fa-circle-check" style="color: rgb(101, 187, 16); font-size: 20px;"></i></a>
+                                                <% }else{ %>
+                                                <a href="?id=<%= dt.id %>&page=<% cpage %>&search=<%= search %>&status=Active"><i class="fa-regular fa-circle-check" style="font-size: 20px;"></i> </a>
+                                                    <% } %>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>
+                                            <input type="checkbox" id="multidelet">
+                                            <button type="submit" class=" bg-transparent" style="border: none ; font-size: 18px;" value="delet"><i class="fa-solid fa-trash-can"></i></button>
+                                        </th>
+                                        <th>title</th>
+                                        <th>content</th>
+                                        <th>image</th>
+                                        <th>operation</th>
+
+                                    </tr>
+                                    <tr>
+                                        <td >
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination">
+
+                                                    <% var cu_page=cpage;var pre=--cu_page; %>
+                                                    <% if(pre>0){ %>
+                                                    <li class="page-item"><a class="page-link" href="?page=<%= pre %>&search=<%= search  %>">Previous</a></li>
+                                                    <% } %>
+                                                    <% for(var i=1;i<=page_num;i++){ %>
+                                                    <li class="page-item <% if(cpage==i){ %><%= 'active' %><% } %>"><a class="page-link active" href="#"><%= i %></a></li>
+                                                    <% } %>
+                                                    <% var next=++cpage %>
+                                                    <% if(next<=page_num){ %>
+                                                        <li class="page-item"><a class="page-link" href="?page=<%= next %>&search=<%= search  %>">Next</a></li>
+                                                        <% } %>
+                                                </ul>
+                                            </nav>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end basic table  -->
+            <!-- ============================================================== -->
+        </div>
+    </div>
+<%- include('footer') %>

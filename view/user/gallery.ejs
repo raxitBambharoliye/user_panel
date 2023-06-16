@@ -1,0 +1,50 @@
+<%- include('user_header')  %>
+<section class="page-heading wow fadeIn" data-wow-duration="1.5s"
+    style="background-image: url(files/images/01-heading.jpg)">
+    <div class="container">
+        <div class="page-name">
+            <h1>Latest Photos</h1>
+            <span>Lovely layout of heading</span>
+        </div>
+    </div>
+</section>
+
+<section class="portfolio on-portfolio">
+    <div class="container">
+        <div class="col-sm-12 text-center">
+            <div id="projects-filter">
+                <a href="#" data-filter="*" class="active">Show All</a>
+                <% for(var ct of cat ){ %>
+                <a href="#" data-filter=".<%=ct.id  %>"><%= ct.category %></a>
+               <% } %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row" id="portfolio-grid">
+                <% for(var sc of subcat){ %>
+                <div class="item col-md-3 col-sm-6 col-xs-12 <%= sc.category_id %>">
+                    <figure>
+                        <img alt="1-image" src="<%=  sc.image %>" height="300px" width="350px" style="object-fit: cover;">
+                        <figcaption>
+                            <h3><%= sc.title %></h3>
+                            <p><%= sc.content  %></p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="portfolio-page-nav text-center">
+                <ul>
+                    <li><a href="#" class="current">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('user_footer')  %>

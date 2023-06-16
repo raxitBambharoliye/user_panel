@@ -1,0 +1,60 @@
+<%- include('user_header') %>
+<section class="page-heading wow fadeIn" data-wow-duration="1.5s" style="background-image: url(files/images/01-heading.jpg)">
+    <div class="container">
+        <div class="page-name">
+            <h1>Contact Us</h1>
+            <span>Lovely layout of heading</span>
+        </div>
+    </div>
+</section>
+
+<section class="contact-map-wrapper">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Find Us On Map</h2>
+            <div class="section-dec"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="contact-map" style="height: 380px; width: 100%;">
+                    <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=california&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br><style>.mapouter{position:relative;text-align:right;height:100%;width:100%;}</style><a href="https://embedgooglemap.2yu.co/">html embed google map</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:100%;width:100%;}</style></div></div>                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="contact-us">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Send Us A Message</h2>
+            <div class="section-dec">
+            </div>
+        </div>      
+
+            <div class="send-message col-sm-12">
+                <form id="contact_form" action="/user/contact_mail" method="post" >
+                    <div class=" col-md-4 col-sm-4 col-xs-6 " style="margin-bottom:15px ;">
+                        <input type="text" class="blog-search-field" name="name" placeholder="Your name..." value="">
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-6 ">
+                        <input type="text" class="blog-search-field" name="email" placeholder="Your email..." value="">
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12 ">
+                        <input type="text" class="subject " name="subject" placeholder="Subject..." value="">
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        <textarea id="message" class="input " name="message" placeholder="Message..."></textarea>
+                    </div>
+                    <div class="submit-coment col-md-12">
+                        <div class="btn-black">
+                            <label for="sb"><a >Send now</a></label>
+                            <input  type="submit" id="sb" hidden></input >
+                        </div>
+                    </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<%- include('user_footer')  %>

@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href=" /vendor/bootstrap/css/bootstrap.min.css">
+    <link href=" /vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href=" /libs/css/style.css">
+    <link rel="stylesheet" href=" /vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href=" /vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href=" /vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet" href=" /vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href=" /vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href=" /vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/datatables/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/datatables/css/buttons.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/datatables/css/select.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/datatables/css/fixedHeader.bootstrap4.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/files/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css"
+        integrity="sha512-0p3K0H3S6Q4bEWZ/WmC94Tgit2ular2/n0ESdfEX8l172YyQj8re1Wu9s/HT9T/T2osUw5Gx/6pAZNk3UKbESw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/noty@3.1.4/lib/noty.min.css" />
+    <style>
+        aside {
+            position: absolute !important;
+            top: 0 !important;
+            height: 100vh;
+            background-color: red !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header start -->
+    <div class="dashboard-main-wrapper">
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="index.html">Concept</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+                        <li class="nav-item d-flex my-3">
+                            <form action="">
+                                <div class=" d-flex align-items-center">
+                                    <i class="fa-solid fa-magnifying-glass mr-2"></i>
+                                    <input class="form-control" name="search" type="text" placeholder="Search..">
+                                    <input type="submit" value="search" name="searching" class="mx-2" hidden>
+                                </div>
+                            </form>
+                        </li>
+                        <li class="nav-item dropdown notification">
+                            <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i> <span
+                                    class="indicator"></span></a>
+                            <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
+                                <li>
+                                    <div class="notification-title"> Notification</div>
+                                    <div class="notification-list">
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item list-group-item-action active">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img
+                                                            src=" /images/avatar-2.jpg" alt=""
+                                                            class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span
+                                                            class="notification-list-user-name">Jeremy
+                                                            Rakestraw</span>accepted your invitation to join the team.
+                                                        <div class="notification-date">2 min ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img
+                                                            src=" /images/avatar-3.jpg" alt=""
+                                                            class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span
+                                                            class="notification-list-user-name"></span>
+                                                        <div class="notification-date">2 days ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img
+                                                            src=" /images/avatar-4.jpg" alt=""
+                                                            class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span
+                                                            class="notification-list-user-name">Monaan Pechi</span> is
+                                                        watching your main repository
+                                                        <div class="notification-date">2 min ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img
+                                                            src=" /images/avatar-5.jpg" alt=""
+                                                            class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span
+                                                            class="notification-list-user-name">Jessica
+                                                            Caruso</span>accepted your invitation to join the team.
+                                                        <div class="notification-date">2 min ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-footer"> <a href="#">View all notifications</a></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown connection">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
+                            <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
+                                <li class="connection-list">
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src=" /images/github.png" alt="">
+                                                <span>Github</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src=" /images/dribbble.png" alt="">
+                                                <span>Dribbble</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src=" /images/dropbox.png" alt="">
+                                                <span>Dropbox</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src=" /images/bitbucket.png"
+                                                    alt=""> <span>Bitbucket</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src=" /images/mail_chimp.png"
+                                                    alt=""><span>Mail chimp</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src=" /images/slack.png" alt="">
+                                                <span>Slack</span></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="conntection-footer"><a href="#">More</a></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
+                                    src=" <%= locals.admins.image %>" alt="" class="user-avatar-md rounded-circle"></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
+                                aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <h5 class="mb-0 text-white nav-user-name">
+                                        <%= locals.admins.name %>
+                                    </h5>
+                                    <span class="status">
+                                        <%= locals.admins.email %>
+                                    </span><span class="ml-2"></span>
+                                </div>
+                                <a class="dropdown-item" href="/profile"><i class="fas fa-user mr-2"></i>profile</a>
+                                <a class="dropdown-item" href="/password"><i class="fas fa-cog mr-2"></i>chenge
+                                    password</a>
+                                <a class="dropdown-item" href="/logout"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- hearder end -->
+        <!-- aside start -->
+        <div class="nav-left-sidebar sidebar-dark " style="overflow: auto;">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="/">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <a class="nav-link active" href="/">Dashboard</a>
+                            <!-- admin -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin_add" data-toggle="collapse" aria-expanded="false"
+                                    data-target="#submenu-1-2" aria-controls="submenu-1-2">Admin</a>
+                                <div id="submenu-1-2" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item ">
+                                            <a class="nav-link" href="/admin_add"><i
+                                                    class="fab fa-fw fa-wpforms"></i>Admin Add</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin_view"><i
+                                                    class="fas fa-fw fa-table"></i>Admin View</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-divider">
+                                User Panel
+                            </li>
+                            <!-- slider -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="/slider" data-toggle="collapse" aria-expanded="false"
+                                    data-target="#submenu-1-3" aria-controls="submenu-1-3">Slider</a>
+                                <div id="submenu-1-3" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item border-top">
+                                            <a class="nav-link" href="/slider"><i class="fa-solid fa-chalkboard"></i>Add
+                                                Slider</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/slider/view_page"><i
+                                                    class="fa-regular fa-eye"></i>view
+                                                Slider</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- offer -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="/offer" data-toggle="collapse" aria-expanded="false"
+                                    data-target="#submenu-1-4" aria-controls="submenu-1-4">offer</a>
+                                <div id="submenu-1-4" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item border-top">
+                                            <a class="nav-link" href="/offer"><i class="fa-solid fa-chalkboard"></i>Add
+                                                offer</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/offer/view_page"><i
+                                                    class="fa-regular fa-eye"></i>view
+                                                offer</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- rec_img -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="/rec_img" data-toggle="collapse" aria-expanded="false"
+                                    data-target="#submenu-1-5" aria-controls="submenu-1-5">Recent Image</a>
+                                <div id="submenu-1-5" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item border-top">
+                                            <a class="nav-link" href="/rec_img"><i
+                                                    class="fa-solid fa-chalkboard"></i>Add
+                                                Recent Image</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/rec_img/view_page"><i
+                                                    class="fa-regular fa-eye"></i>view
+                                                Recent Image</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Review -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="/say" data-toggle="collapse" aria-expanded="false"
+                                    data-target="#submenu-1-6" aria-controls="submenu-1-6">Review</a>
+                                <div id="submenu-1-6" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item border-top">
+                                            <a class="nav-link" href="/say"><i class="fa-solid fa-chalkboard"></i>Add
+                                                Review</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/say/view_page"><i
+                                                    class="fa-regular fa-eye"></i>view
+                                                Review</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Blog -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="/blog" data-toggle="collapse" aria-expanded="false"
+                                    data-target="#submenu-1-7" aria-controls="submenu-1-7">Blog</a>
+                                <div id="submenu-1-7" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item border-top">
+                                            <a class="nav-link" href="/blog"><i class="fa-solid fa-chalkboard"></i>Add
+                                                Blog</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/blog/view_page"><i
+                                                    class="fa-regular fa-eye"></i>view
+                                                Blog</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/blog/view_comment"><i
+                                                    class="fa-regular fa-eye"></i>view
+                                                Blog Comment</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Gallery -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="/" data-toggle="collapse" aria-expanded="false"
+                                    data-target="#submenu-1-8" aria-controls="submenu-1-8">Gallery</a>
+                                <div id="submenu-1-8" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item border-top">
+                                            <a class="nav-link" href="/category"><i
+                                                    class="fa-solid fa-chalkboard"></i>Add
+                                                Gallery Category</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/category/view_page"><i
+                                                    class="fa-regular fa-eye"></i>view
+                                                Gallery Category</a>
+                                        </li>
+                                        <li class="nav-item border-top">
+                                            <a class="nav-link" href="/subcategory"><i
+                                                    class="fa-solid fa-chalkboard"></i>Add
+                                                Gallery Category</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/subcategory/view_page"><i
+                                                    class="fa-regular fa-eye"></i>view
+                                                Gallery Category</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Team Member -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="/team" data-toggle="collapse" aria-expanded="false"
+                                    data-target="#submenu-1-9" aria-controls="submenu-1-9">Team </a>
+                                <div id="submenu-1-9" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item border-top">
+                                            <a class="nav-link" href="/team"><i class="fa-solid fa-chalkboard"></i>Add
+                                                Team Member</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/team/view_page"><i
+                                                    class="fa-regular fa-eye"></i>view
+                                                Team Member</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Client -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="/client" data-toggle="collapse" aria-expanded="false"
+                                    data-target="#submenu-1-10" aria-controls="submenu-1-10">Client</a>
+                                <div id="submenu-1-10" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item border-top">
+                                            <a class="nav-link" href="/client"><i class="fa-solid fa-chalkboard"></i>Add
+                                                Client</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/client/view_page"><i
+                                                    class="fa-regular fa-eye"></i>view
+                                                Client</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>
+            </div>
+        </div>
+        <!-- aside end -->

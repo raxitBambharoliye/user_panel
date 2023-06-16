@@ -1,0 +1,129 @@
+<%- include('header') %>
+    <div class="dashboard-wrapper">
+        <div class="container-fluid  dashboard-content">
+
+            <!-- page heading -->
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="page-header">
+                        <h2 class="pageheader-title">Edit Admin </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form id="validationform" method="post" action="/upData" enctype="multipart/form-data">
+                                <input type="hidden" name="eid" value="<%= data.id %>">
+                                <% var nam=data.name.split(" ") %>
+                                <!-- fname -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">First name</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <input type="text" name="fname" placeholder="Enter first name"
+                                            class="form-control" value="<%=nam[0]%>">
+                                    </div>
+                                </div>
+                                <!-- lname -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">last name</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <input type="text" name="lname" placeholder="Enter Last Name"
+                                            class="form-control" value="<%=nam[1]%>">
+                                    </div>
+                                </div>
+                                <!-- email -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Email</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <input type="email" name="email" placeholder="Enter Email Id"
+                                            class="form-control" value="<%=data.email%>">
+                                    </div>
+                                </div>
+                                <!-- gender -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">gender</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <label class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" name="gender" value="male" class="custom-control-input"
+                                                <% if(data.gender=="male" ){ %>
+                                            <%= 'checked' %>
+                                                <% } %>><span class="custom-control-label">male</span>
+                                        </label>
+                                        <label class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" name="gender" value="female"
+                                                class="custom-control-input" <% if(data.gender=="female" ){ %>
+                                            <%= 'checked' %>
+                                                <% } %>><span class="custom-control-label">female</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- hobby -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">hobby</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <label class="custom-control custom-checkbox custom-control-inline">
+                                            <input type="checkbox" value="reading" name="hobby[]" <% if(data.hobby.includes('reading')){ %><%= "checked" %><% } %>
+                                                class="custom-control-input"><span
+                                                class="custom-control-label">reading</span>
+                                        </label>
+                                        <label class="custom-control custom-checkbox custom-control-inline">
+                                            <input type="checkbox" value="writing" name="hobby[]" <% if(data.hobby.includes('writing')){ %><%= "checked" %><% } %>
+                                                class="custom-control-input"><span class="custom-control-label">writing
+                                            </span>
+                                        </label>
+                                        <label class="custom-control custom-checkbox custom-control-inline">
+                                            <input type="checkbox" value="gameing" name="hobby[]" <% if(data.hobby.includes('gameing')){ %><%= "checked" %><% } %>
+                                                class="custom-control-input"><span class="custom-control-label">gameing
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- city -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">city</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <div class="form-group">
+                                            <select name="city" class="form-control">
+                                                <% var city=["surat","vadodara","rajakot"] %>
+                                                    <option value=" ">select city</option>
+                                                    <% for(var i=0;i<3;i++) {%>
+                                                        <option value="<%= city[i]%>" <% if(data.city == city[i]){ %><%= 'selected' %><% } %>> <%= city[i]%> </option>
+                                                        <% }; %>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- description -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">description</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <textarea name="description" class="form-control"><%= data.description %></textarea>
+                                    </div>
+                                </div>
+                                <!--image   -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">image</label>
+                                    <div class="col-sm-4 col-lg-4 mb-3 mb-sm-0">
+                                        <div class="d-flex justify-content-between align-items-center ">
+                                            <input id="pass2" type="file" name="image" class="form-control-file"> 
+                                        <img src="<%= data.image  %>" height="50" width="50" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- buttons -->
+                                <div class="form-group row text-right">
+                                    <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+                                        <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                        <button class="btn btn-space btn-secondary">Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <%- include('footer') %>

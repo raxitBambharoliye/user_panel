@@ -1,0 +1,84 @@
+<%- include('header') %>
+    <div class="dashboard-wrapper">
+        <div class="container-fluid  dashboard-content">
+
+            <!-- page heading -->
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="page-header">
+                        <h2 class="pageheader-title">Edit Blog </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form id="validationform" method="post" action="/blog/edit_data"
+                                enctype="multipart/form-data">
+                                <input type="hidden" name="eid" value="<%= data.id %>">
+                                <!-- title -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">title</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <input type="text" name="title" placeholder="Enter first name"
+                                            class="form-control" value="<%= data.title %>">
+                                    </div>
+                                </div>
+                                <!-- name -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">name</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <input type="text" name="name" placeholder="Enter  name" class="form-control"
+                                            value="<%= data.name %>">
+                                    </div>
+                                </div>
+                                <!-- category -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">category</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <div class="form-group">
+                                            <select name="category" class="form-control">
+                                                <% var category=["news","sport","i.t","game"] %>
+                                                    <option value=" ">select category</option>
+                                                    <% category.forEach(element => {%>
+                                                        <option value="<%= element %>" <% if(data.category==element){ %>
+                                                            <%= 'selected' %>
+                                                                <% } %> ><%= element %>
+                                                        </option>
+                                                        <% }); %>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- content -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">content</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <textarea type="text" name="content" placeholder="Enter Last Name"
+                                            class="form-control"><%= data.content %> </textarea>
+                                    </div>
+                                </div>
+                                <!--image   -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">image</label>
+                                    <div class="col-sm-4 col-lg-3 mb-3 mb-sm-0">
+                                        <input id="pass2" type="file" name="image" class="form-control-file">
+                                        <img src="<%= data.image %>" height="50" width="50">
+                                    </div>
+                                </div>
+                                <!-- buttons -->
+                                <div class="form-group row text-right">
+                                    <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+                                        <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                        <button class="btn btn-space btn-secondary">Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <%- include('footer') %>

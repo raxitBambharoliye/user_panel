@@ -1,0 +1,66 @@
+<%- include('header') %>
+    <div class="dashboard-wrapper">
+        <div class="container-fluid  dashboard-content">
+
+            <!-- page heading -->
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="page-header">
+                        <h2 class="pageheader-title">Add Review</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form id="validationform" method="post" action="/say/add_data">
+                                <!-- name -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">name</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <input type="text" name="name" placeholder="Enter  name"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <!-- city -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">city</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <input type="text" name="city" placeholder="Enter City Name"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <!-- country -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">country</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <input type="text" name="country" placeholder="Enter Country Name"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <!-- content -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Content</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <textarea name="content" id="" class="form-control" cols="30"
+                                            placeholder="Enter Review..." rows="10"></textarea>
+                                    </div>
+                                </div>
+
+                        </div>
+                        <!-- buttons -->
+                        <div class="form-group row text-right">
+                            <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+                                <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                <button class="btn btn-space btn-secondary">Cancel</button>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <%- include('footer') %>

@@ -1,0 +1,33 @@
+<%- include('header') %>
+    <div class="dashboard-wrapper">
+        <div class="container-fluid dashboard-content">
+            <div class="row">
+                <div class="col-xl-12 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="card card-fluid">
+                        <div class="card-body text-center">
+                            <!-- .user-avatar -->
+                            <a href="user-profile.html" class="user-avatar my-3">
+                                <img src="<%= locals.admins.image %>" alt="User Avatar" class="rounded-circle user-avatar-xl" style="object-fit: cover;">
+                            </a>
+                            <!-- /.user-avatar -->
+                            <h3 class="card-title mb-2 text-truncate">
+                                <a href="user-profile.html">
+                                    <%= locals.admins.name %>
+                                </a>
+                            </h3>
+                            <h6 class="card-subtitle text-muted mb-3">
+                                <%= locals.admins.email %>
+                            </h6>
+
+                            <p>
+                                <a href="/editProfile/<%= locals.admins.id %>" class="btn btn-primary">View Profile
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <%- include('footer') %>

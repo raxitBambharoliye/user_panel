@@ -1,0 +1,62 @@
+<%- include('header') %>
+    <div class="dashboard-wrapper">
+        <div class="container-fluid  dashboard-content">
+
+            <!-- page heading -->
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="page-header">
+                        <h2 class="pageheader-title">Edit Offer </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form id="validationform" method="post" action="/offer/edit" >
+                                <input type="hidden" name="eid" value="<%= data.id  %>">
+                                <!-- Icon -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Icon</label>
+                                    <div class="col-12 col-sm-8 col-lg-6  d-flex align-items-center">
+                                        <input type="text" name="icon" placeholder="Enter Icon Class"
+                                            class="form-control" value="<%= data.icon %>">
+                                            <i class="<%= data.icon %> ml-2" style="font-size: 20px;"></i>
+                                    </div>
+                                </div>
+                                <!-- Title -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Title</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <input type="text" name="title" placeholder="Enter Title"
+                                            class="form-control" value="<%= data.title %>">
+                                    </div>
+                                </div>
+                                <!-- Content -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Content</label>
+                                    <div class="col-12 col-sm-8 col-lg-6" >
+                                        <textarea type="text" name="content" placeholder="Enter Content..."
+                                            class="form-control"><%= data.content %></textarea>
+                                    </div>
+                                </div>
+                                
+                                </div>
+                                <!-- buttons -->
+                                <div class="form-group row text-right">
+                                    <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+                                        <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                        <button class="btn btn-space btn-secondary">Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <%- include('footer') %>
+
+       

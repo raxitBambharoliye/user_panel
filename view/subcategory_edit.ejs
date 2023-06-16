@@ -1,0 +1,74 @@
+<%- include('header') %>
+    <div class="dashboard-wrapper">
+        <div class="container-fluid  dashboard-content">
+
+            <!-- page heading -->
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="page-header">
+                        <h2 class="pageheader-title">Edit subcategory</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form id="validationform" method="post" action="/subcategory/edit"
+                                enctype="multipart/form-data">
+                                <!-- eid -->
+                                <input type="hidden" name="eid" value="<%= data.id  %>">
+                                <!-- title -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">title</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <input type="text" name="title" placeholder="Enter Title"
+                                            class="form-control" value="<%= data.title %>">
+                                    </div>
+                                </div>
+                                <!-- content -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">content</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <textarea type="text" name="content" placeholder="Enter Content"
+                                            class="form-control"><%= data.content %></textarea>
+                                    </div>
+                                </div>
+                                <!-- category -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">category</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <select name="category_id" id="" class="form-control">
+                                            <option value="">--select category--</option>
+                                            <% for(var ct of category){ %>
+                                                <option value="<%= ct.id %>" <% if(ct.id==data.category_id){ %>
+                                                    <%= 'selected' %>
+                                                        <% } %>><%= ct.category %>
+                                                </option>
+                                                <% } %>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- image -->
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">image</label>
+                                    <div class="col-sm-6 col-lg-6 mb-3 mb-sm-0 d-flex">
+                                        <input id="pass2" type="file" name="image" class="form-control-file">
+                                        <img src="<%=  data.image %>" height="50" width="50" alt="">
+                                    </div>
+                                </div>
+                                <!-- buttons -->
+                                <div class="form-group row text-right">
+                                    <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+                                        <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                        <button class="btn btn-space btn-secondary">Cancel</button>
+                                    </div>
+                                </div>  
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <%- include('footer') %>

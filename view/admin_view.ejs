@@ -1,0 +1,76 @@
+<%- include('header') %>
+<div class="dashboard-wrapper">
+    <div class="container-fluid  dashboard-content">
+        <!-- ============================================================== -->
+        <!-- pageheader -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="page-header">
+                    <h2 class="pageheader-title">Admin</h2>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end pageheader -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <!-- ============================================================== -->
+            <!-- basic table  -->
+            <!-- ============================================================== -->
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <h5 class="card-header">Basic Table</h5>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered first text-center">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>email</th>
+                                        <th>gender</th>
+                                        <th>hobby</th>
+                                        <th>city</th>
+                                        <th>image</th>
+                                        <th>operation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for(var dt of data){ %>
+                                        <tr>
+                                            <td><%=dt.name%></td>
+                                            <td><%=dt.email%></td>
+                                            <td><%=dt.gender%></td>
+                                            <td><%=dt.hobby%></td>
+                                            <td><%=dt.city%></td>
+                                            <td><img src="<%=dt.image%>" height="50" width="50"></td>
+                                            <td>
+                                                <a href="/deletData/<%= dt.id %>"><i class="fa-solid fa-trash " style="font-size: 20px; margin-right: 8px;"></i></a>
+                                                <a href="/editPage/<%= dt.id %>"><i class="fa-solid fa-pen-to-square" style="font-size: 20px; "></i></a>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>email</th>
+                                        <th>gender</th>
+                                        <th>hobby</th>
+                                        <th>city</th>
+                                        <th>image</th>
+                                        <th>operation</th>
+
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end basic table  -->
+            <!-- ============================================================== -->
+        </div>
+    </div>
+<%- include('footer') %>
