@@ -4,11 +4,11 @@ const passport = require('passport');
 const router = express.Router();
 const adminController = require('../controller/adminController');
 //--------------- login start --------------- 
-router.get('/', adminController.login);
+router.get('/admin', adminController.login);
 
 router.get('/login_page', (req, res) => { res.render('login') })
 
-router.post('/loginData', passport.authenticate('local', { failureRedirect: "/" }), adminController.loginData);
+router.post('/loginData', passport.authenticate('local', { failureRedirect: "/admin" }), adminController.loginData);
 //--------------- login end --------------- 
 //************************************************* */
 //--------------- forget start --------------- 
@@ -62,6 +62,7 @@ router.get('/logout', passport.setAuthenticated, adminController.logout);
 //routers
 //************************************************* */
 //user 
+router.use('/', require('./user'));
 router.use('/user', require('./user'));
 //user comment
 router.use('/comment', require('./comment'));
