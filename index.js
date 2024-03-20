@@ -2,7 +2,7 @@ const express = require('express');
 const db = require('./config/mongodb');
 const path = require('path');
 const cookie = require('cookie-parser');
-
+const http = require('http');
 // passport
 const passport_local = require('./config/passport');
 const passport = require('passport');
@@ -47,7 +47,10 @@ const app = express();
 
 // !!!!!!!!!!!!!!!!!!!!Server End!!!!!!!!!!!!!!!!!!!!
 
-app.listen(8009, (err) => {
+ let server = http.createServer(app);
+
+
+server.listen(8009, (err) => {
     if (err) {
         console.log("server not running ", err);
         return false;
