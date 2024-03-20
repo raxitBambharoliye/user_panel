@@ -43,8 +43,8 @@ const app = express();
     app.use(flash());
     app.use(flash_mid.setflash);
 //index router
-    app.use('/', require('./router/index'));
-
+    // app.use('/', require('./router/index'));
+app.get('/',(req,res)=>{res.send("Ok Done")})
 // !!!!!!!!!!!!!!!!!!!!Server End!!!!!!!!!!!!!!!!!!!!
 
  let server = http.createServer(app);
