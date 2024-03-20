@@ -1,15 +1,15 @@
 const express = require('express');
-const db = require('./config/mongodb');
-const path = require('path');
-const cookie = require('cookie-parser');
+// const db = require('./config/mongodb');
+// const path = require('path');
+// const cookie = require('cookie-parser');
 const http = require('http');
-// passport
-const passport_local = require('./config/passport');
-const passport = require('passport');
-const session = require('express-session');
-//flash 
-const flash = require('express-flash');
-const flash_mid = require('./config/flash_middleware');
+// // passport
+// const passport_local = require('./config/passport');
+// const passport = require('passport');
+// const session = require('express-session');
+// //flash 
+// const flash = require('express-flash');
+// const flash_mid = require('./config/flash_middleware');
 
 // !!!!!!!!!!!!!!!!!!!!Server Start!!!!!!!!!!!!!!!!!!!!
 
