@@ -15,33 +15,33 @@ const flash_mid = require('./config/flash_middleware');
 
 const app = express();
 // ejs paths
-    app.use(express.urlencoded());
-    app.set('view engine', 'ejs');
-    app.set('views', path.join(__dirname, 'view'));
-//image folder
-    app.use('/uplod', express.static(path.join(__dirname, 'uplod')));
-//cookie-parser
-    app.use(cookie());
-//assets paths
-    app.use(express.static('user_assets'));
-    app.use(express.static('assets'));
-//session
-    app.use(session({
-        name: 'passport',
-        secret: 'pass',
-        resave: false,
-        saveUninitialized: false,
-        cookie: {
-            maxAge: 100 * 60 * 60
-        }
-    }))
-//passport authenticated
-    app.use(passport.initialize());
-    app.use(passport.session());
-    app.use(passport.setAuthenticatedUser);
-//flash message
-    app.use(flash());
-    app.use(flash_mid.setflash);
+//     app.use(express.urlencoded());
+//     app.set('view engine', 'ejs');
+//     app.set('views', path.join(__dirname, 'view'));
+// //image folder
+//     app.use('/uplod', express.static(path.join(__dirname, 'uplod')));
+// //cookie-parser
+//     app.use(cookie());
+// //assets paths
+//     app.use(express.static('user_assets'));
+//     app.use(express.static('assets'));
+// //session
+//     app.use(session({
+//         name: 'passport',
+//         secret: 'pass',
+//         resave: false,
+//         saveUninitialized: false,
+//         cookie: {
+//             maxAge: 100 * 60 * 60
+//         }
+//     }))
+// //passport authenticated
+//     app.use(passport.initialize());
+//     app.use(passport.session());
+//     app.use(passport.setAuthenticatedUser);
+// //flash message
+//     app.use(flash());
+//     app.use(flash_mid.setflash);
 //index router
     // app.use('/', require('./router/index'));
 app.get('/',(req,res)=>{res.send("Ok Done")})
